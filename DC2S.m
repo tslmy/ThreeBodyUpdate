@@ -1,0 +1,6 @@
+function [d,c1] = DC2S(S1,C1,systems)
+s1=find(systems(:,1)==S1)
+s2=find(systems(:,5)==C1)
+D=sqrt((systems(s1,2)-systems(s2,2)).^2+(systems(s1,3)-systems(s2,3)).^2)
+d=min(D)
+c1=systems(s2(find(D==d)),1)
